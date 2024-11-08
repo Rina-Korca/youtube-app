@@ -1,0 +1,237 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes up full viewport height */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.youtube-logo {
+  height: 30px;
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 1;
+  max-width: 600px;
+  margin: 0 1rem;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 2px 0 0 2px;
+}
+
+.search-btn {
+  padding: 0.5rem;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+}
+
+.menu-icons img {
+  height: 24px;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.menu-channel-icon {
+  border-radius: 50%;
+}
+
+/* Main container and layout */
+.main-container {
+  display: flex;
+  margin-top: 15px; /* Ensure content is below the sticky header */
+  flex-grow: 1; /* Allow content to grow */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f1f1f1;
+  padding-top: 1rem;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  height: 100vh; /* Ensures sidebar spans full height */
+  top: 0;
+  left: 0;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-top: 12rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #eaeaea;
+}
+
+.sidebar-icon {
+  margin-right: 10px;
+}
+
+.content {
+  margin-left: 200px; /* Push content to the right of the sidebar */
+  flex-grow: 1; /* Content takes up remaining space */
+  padding: 1rem;
+  overflow-x: hidden;
+  padding-bottom: 4rem; /* Add bottom padding to leave space for footer */
+}
+
+/* Category section */
+.categories {
+  display: flex;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.category-section {
+  display: flex;
+  gap: 1rem;
+}
+
+.category {
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category:hover {
+  background-color: #d0d0d0;
+}
+
+.category.active {
+  background-color: #c0c0c0;
+  font-weight: bold;
+}
+
+/* Video grid */
+.video-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 3rem 1rem;
+  padding: 3rem 1.5rem;
+  border-top: 4px solid #ccc;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbnail {
+  position: relative;
+  display: block;
+}
+
+.thumbnail-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.thumbnail[data-duration]::after {
+  content: attr(data-duration);
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+}
+
+.video-bottom-section {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.channel-icon {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.video-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.video-channel-name {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.video-metadata {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+/* Footer styling - Fixed at the bottom */
+footer {
+  width: 100%;
+  background-color: #f1f1f1;
+  color: #333;
+
+  text-align: center;
+  padding: 1rem;
+  position: fixed; /* Fixed position */
+  bottom: 0; /* Stick it to the bottom */
+  left: 0; /* Span across the full width */
+  z-index: 200; /* Ensure it's above other content */
+}
